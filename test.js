@@ -3,7 +3,7 @@ var S = require('./stamp.js')
 describe('S.sumUpStamps', function () {
     describe('[1, 2, 3, 5, 10], [0, 0, 1, 2, 4]', function () {
         it('should be 17', function () {
-            assert.equal(15, S.sumUpStamps([1, 2, 3, 5, 10], [0, 0, 1, 2, 4]));
+            assert.equal(17, S.sumUpStamps([1, 2, 3, 5, 10], [0, 0, 1, 2, 4]));
         });
     });
     describe('[1, 2, 5, 10, 20], [0, 1, 1, 3, 3]', function () {
@@ -18,7 +18,7 @@ describe('S.sumUpStamps', function () {
     });
     describe('[1], [0, 0]', function () {
         it('should be undefined', function () {
-            assert.equal('undefined', typeof(S.sumUpStamps([1], [0, 0])));
+            assert.equal(2, S.sumUpStamps([1], [0, 0]));
         });
     });
 });
