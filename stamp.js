@@ -1,11 +1,24 @@
 var S = module.exports = {}
 
 S.sumUpStamps = function(stamps, ia) {
-    //TODO
+    let p = stamps;
+    let sum = 0;
+    ia.forEach(function(element) {
+        sum += p[element];
+    }, p);
+    return sum;
 }
 
 S.initIA = function(stamps, desired) {
-    //TODO
+    if (stamps.length == 0) return undefined;
+    let p = stamps;
+    let b = p[p.length - 1];
+    let a = []; 
+    for(let n = 0; desired > b * n; n++)
+    {
+            a.push(p.length - 1);
+    }
+    return a;
 }
 
 S.nextIAstepDown = function(stamps, ia, desired) {
