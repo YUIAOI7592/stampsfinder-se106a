@@ -26,17 +26,18 @@ describe('S.sumUpStamps', function () {
 describe('S.initIA', function () {
     describe('[1, 2, 3, 5], 23', function () {
         it('should be [3, 3, 3, 3, 3]', function () {
-            assert.equal([3, 3, 3, 3, 3], S.initIA([1, 2, 3, 5], 23));
+            a = [3, 3, 3, 3, 3];
+            assert.deepEqual(S.initIA([1, 2, 3, 5], 23), a);
         });
     });
     describe('[2, 10], 15', function () {
         it('should be [1, 1]', function () {
-            assert.equal([1, 1], S.initIA([2, 10], 15));
+            assert.deepEqual(S.initIA([2, 10], 15), [1, 1]);
         });
     });
     describe('[], 1', function () {
         it('should be undefined', function () {
-            assert.equal('undefined', typeof(S.initIA([], 1)));
+            assert.deepEqual(typeof(S.initIA([], 1)), 'undefined');
         });
     });
 });
