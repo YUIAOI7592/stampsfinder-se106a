@@ -25,12 +25,10 @@ S.nextIAstepDown = function (stamps, ia, desired) {
     let [...index] = ia;
     let target = desired;
     let temp = 0;
-    while (S.sumUpStamps(price, index) > target) {
-        temp = index.pop();
-    }
+    temp = index.pop();
     while (S.sumUpStamps(price, index) < target) {
         temp = temp - 1;
-        if (temp < 0) temp = 0;
+        if (temp < 0) break;
         index.push(temp);
     }
     return index;
@@ -43,7 +41,7 @@ S.findStamp = function (stamps, desired) {
     let target = desired;
     let result = [];
     let temp = [];
-    while (S.sumUpStamps(price, index) > target) {
+    while (S.sumUpStamps(price, index) != target) {
         [...temp] = S.nextIAstepDown(price, index, target);
         if (index[index.length - 1] == temp[temp.length - 1]) break;
         [...index] = temp;
